@@ -24,6 +24,9 @@ to setup babel. Plus it actually does a great deal of the es module stuff for re
 ###  Observables TC39 proposal
 [observables](https://github.com/tc39/proposal-observable)
 
+![observables linked logo from web](https://rxjs-dev.firebaseapp.com/assets/images/logos/logo.png "Observables image item")
+
+
 Using the RxJs implementation of the observables proposal ( or maybe vice versa ) some use demo use cases are given
 
 - fromEvent, open in browser, (mac) cmd-o src/observables/fromEvent/index.html, this demonstrates observable
