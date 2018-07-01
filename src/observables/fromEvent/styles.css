@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Chewy');
+
+html, body {
+  border: 5px solid black;
+  color: white;
+  font-family: 'Chewy', cursive;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+h1, h2 , h3, h4 , h5 {
+  text-shadow: 5px 5px black;
+}
+
+h1 {
+  font-size: 3em
+}
+
+h2 {
+  font-size: 2em;
+}
+
+button {
+  background-color: transparent;
+  border: 1px solid block;
+  color: white;
+  font-size: 1.2em;
+  font-family: 'Chewy', cursive;
+  width: 25%;
+}
+
+#fromEvent, #fromPromise, #fromCallback {
+  line-height: 0px;
+}
+
+#app {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+}
+
+#col1 , #col2, #col3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+#col1 {
+  background-color: #AF0B0B;
+}
+
+#col2 {
+  background-color: #076969;
+}
+
+#col3 {
+  background-color: #AF550B;
+}
+
+#transformButton {
+  margin-top: 30px;
+}
