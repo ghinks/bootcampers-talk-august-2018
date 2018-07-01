@@ -16,6 +16,6 @@ const observer = x => {
 
 const myObs = new Observable(myFunc)
 
-const myMappedObservable = myObs.pipe(map(pkgStr => JSON.parse(pkgStr).version))
+const myMappedObservable = myObs.pipe(map(pkgStr => parseInt(JSON.parse(pkgStr).version, 10)))
 
 myMappedObservable.subscribe(observer)
