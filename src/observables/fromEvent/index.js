@@ -1,5 +1,5 @@
 const { fromEvent, interval } = rxjs
-const { throttle, repeat, map, takeLast, take } = rxjs.operators
+const { throttle, throttleTime, retry, map, takeLast, take} = rxjs.operators
 
 const moveExample = () => {
     // move
@@ -8,12 +8,26 @@ const moveExample = () => {
     let trackerSub = trackerSource.subscribe(e => tracker.innerHTML = 'X co-ord on move ' + e.clientX )
 }
 
-const throttleExample = () => {
+const throttleInterval = () => {
     // throttle
     let tracker = document.getElementById('tracker2');
     const clicks = fromEvent(document, 'click');
     const result = clicks.pipe(throttle(ev => interval(3000)));
     result.subscribe(e => tracker.innerHTML = 'Y co-ord throttled on click ' + e.clientY);
+}
+
+const throttleByTime = () => {
+    let button2 = document.getElementById('button2');
+    const clicks = fromEvent(button2, 'click');
+    const result = clicks.pipe(throttleTime(1000));
+    result.subscribe(() => console.log('throttling to 1000mS'));
+}
+
+const repeatByAgain = () => {
+    let button3 = document.getElementById('button3');
+    const clicks = fromEvent(button3, 'click');
+    const result = clicks.pipe(retry(2));
+    result.subscribe(() => console.log('repeating ...'));
 }
 
 const clickExample = () => {
@@ -39,5 +53,7 @@ const clickExample = () => {
 }
 
 moveExample();
-throttleExample();
+throttleInterval();
 clickExample();
+throttleByTime();
+repeatByAgain();

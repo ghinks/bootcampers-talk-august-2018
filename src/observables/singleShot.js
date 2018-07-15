@@ -1,8 +1,10 @@
-import fs from 'fs/promises'
+import fs from 'fs'
+// const fs = require('fs').promises
 import { Observable } from 'rxjs'
+// const Observable = require('rxjs').Observable;
 
 const myFunc = async function (observer) {
-  const result = await fs.readFile('package.json', 'utf8')
+  const result = await fs.promises.readFile('package.json', 'utf8')
   observer.next(result)
 }
 

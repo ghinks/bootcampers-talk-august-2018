@@ -1,10 +1,10 @@
-import fs from 'fs/promises'
+import fs from 'fs'
 import { Observable } from 'rxjs'
 import { map } from 'rxjs/operators'
 
 const myFunc = async function (observer) {
   const handler = async () => {
-    const result = await fs.readFile('package.json', 'utf8')
+    const result = await fs.promises.readFile('package.json', 'utf8')
     observer.next(result)
   }
   setInterval(handler, 3000)
